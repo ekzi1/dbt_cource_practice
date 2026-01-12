@@ -1,0 +1,26 @@
+sources:
+  - name: demo_src
+    #database: dwh_flights
+    description: Данные из БД авиаперелетов
+    tables:
+      - name: aircrafts
+        description: Модели самолетов
+      - name: airports
+        description: Аэропорты
+      - name: seats
+        description: Места в самолетах
+      - name: bookings
+        description: Бронирования
+        columns:
+          - name: book_ref
+          - name: book_date
+          - name: total_amount
+        # freshness:
+        #   warn_after:
+        #     count: 6
+        #     period: hour
+        #   error_after:
+        #     count: 1
+        #     period: day
+        #   #filter: 
+        # loaded_at_field: book_date::timestamp
